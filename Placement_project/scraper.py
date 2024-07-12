@@ -6,8 +6,8 @@ import requests
 from bs4 import BeautifulSoup
 from sqlalchemy.orm import Session
 from apscheduler.schedulers.blocking import BlockingScheduler
-from app import crud, schemas
-from app.database import SessionLocal
+import crud, schemas
+from database import SessionLocal
 
 def read_company_details(file_path):
     df = pd.read_excel(file_path)
@@ -36,7 +36,7 @@ def scrape_job_postings(url):
 
 def scrape_and_store_jobs():
     db: Session = SessionLocal()
-    file_path = os.path.join(os.path.dirname(__file__), '../data/companieslinks-list.xlsx')
+    file_path = os.path.join(os.path.dirname(__file__), '../Placement_project/data/companieslinks-list.xlsx')
     companies = read_company_details(file_path)
     
     for company in companies:

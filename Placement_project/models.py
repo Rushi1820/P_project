@@ -1,7 +1,7 @@
 # app/models.py
 
 from sqlalchemy import Column, Integer, String, Text
-from app.database import Base
+from database import Base
 
 class JobPosting(Base):
     __tablename__ = 'job_postings'

@@ -1,8 +1,8 @@
 # app/crud.py
 
 from sqlalchemy.orm import Session
-from app.models import JobPosting
-from app.schemas import JobPostingCreate
+from models import JobPosting
+from schemas import JobPostingCreate
 
 def create_job_posting(db: Session, job_posting: JobPostingCreate):
     db_job_posting = JobPosting(
